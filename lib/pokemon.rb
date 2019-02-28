@@ -17,11 +17,9 @@ class Pokemon
     @@all
   end
 
-  #db.execute("CREATE TABLE IF NOT EXISTS pokemons (id INTEGER PRIMARY KEY, name TEXT, type TEXT)")
-
 
   def self.save(name, type,  db)
-    test = db.execute("INSERT INTO pokemon (name, type) VALUES (?,?)", name, type)
+    db.execute("INSERT INTO pokemon (name, type) VALUES (?,?)", name, type)
   end
 
 
