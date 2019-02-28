@@ -6,11 +6,7 @@ class Pokemon
   @@all = []
 
   def initialize(id:, name:, type:, hp: nil, db:)
-    @id = id
-    @name = name
-    @type = type
-    @hp = hp
-    @db = db
+    arguments.each {|k, v| self.send("#{k}=", v)}
     self.class.all << self
   end
 
